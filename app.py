@@ -34,7 +34,7 @@ def run_search(description):
     url= "https://admin-apis.isometrik.io/v1/gptChatMsg/"
     payload= json.dumps(
       {
-          "session_id": "1735895300304",
+          "session_id": "1735909520932",
           "agent_id": "675bd8da356683fa5bc0731f",
           "message": description,
           "file": ""
@@ -90,6 +90,14 @@ def main():
                 df = pd.read_excel(file_path, engine='openpyxl', sheet_name=selected_sheet)  # Reads the specified sheet
                 logger.info(f"Reading data from sheet: {selected_sheet}")
                 print(f"Reading data from sheet: {selected_sheet}")  # Print the sheet being read
+
+                # Check if 'Description' column exists
+                if 'Description' not in df.columns:
+                    error_message = "Error: 'Description' column not found in the selected sheet."
+                    logger.info(error_message)
+                    print(error_message)  # Print the error
+                    st.error(error_message)  # Display error in Streamlit
+                    return  # Exit the function if the column is missing
 
                 image_urls = []  # Use a list to store image URLs for each row
                 for description in df['Description']:  # Assuming the column with descriptions is named 'Description'
