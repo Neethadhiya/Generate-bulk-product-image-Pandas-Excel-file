@@ -100,21 +100,22 @@ def main():
                     return  # Exit the function if the column is missing
 
                 image_urls = []  # Use a list to store image URLs for each row
-                for description in df['Description']:  # Assuming the column with descriptions is named 'Description'
-                    results = run_search(description) 
-                    try:
-                        results = json.loads(results)  # Search for each description
-                        logger.info(f"Results for description '{description}': {results}")
-                        print(f"Results for description '{description}': {results}")  # Print results
-                        if isinstance(results, list):
-                            urls = [item['s3_bucket_image_url'] for item in results][:3]  # Limit to first 3 URLs
-                            image_urls.append('\n'.join(urls))  # Append the joined URLs with newline to the list
-                        else:
-                            image_urls.append('')  # Append an empty string if no results
-                    except (json.JSONDecodeError, TypeError) as e:
-                        logger.info(f"Error processing results for description '{description}': {e}")
-                        print(f"Error processing results for description '{description}': {e}")  # Print error
-                        image_urls.append('')  # Append an empty string in case of an error
+                with st.spinner("Processing descriptions..."):  # Add spinner here
+                    for description in df['Description']:  # Assuming the column with descriptions is named 'Description'
+                        results = run_search(description) 
+                        try:
+                            results = json.loads(results)  # Search for each description
+                            logger.info(f"Results for description '{description}': {results}")
+                            print(f"Results for description '{description}': {results}")  # Print results
+                            if isinstance(results, list):
+                                urls = [item['s3_bucket_image_url'] for item in results][:3]  # Limit to first 3 URLs
+                                image_urls.append('\n'.join(urls))  # Append the joined URLs with newline to the list
+                            else:
+                                image_urls.append('')  # Append an empty string if no results
+                        except (json.JSONDecodeError, TypeError) as e:
+                            logger.info(f"Error processing results for description '{description}': {e}")
+                            print(f"Error processing results for description '{description}': {e}")  # Print error
+                            image_urls.append('')  # Append an empty string in case of an error
                 logger.info(f"Image URLs: {image_urls}")  # Log the last URL processed
                 print(f"Image URLs: {image_urls}")  # Print the last URL processed
 
