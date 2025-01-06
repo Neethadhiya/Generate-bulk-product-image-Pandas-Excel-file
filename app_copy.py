@@ -34,13 +34,13 @@ def run_search(description):
     url= "https://admin-apis.isometrik.io/v1/gptChatMsg/"
     payload= json.dumps(
       {
-          "session_id": "1736162759437",
+          "session_id": "1735909520932",
           "agent_id": "675bd8da356683fa5bc0731f",
           "message": description,
           "file": ""
       })
     headers = {
-                'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQUpybXA5cktvcDliZEl4NUNzaEJOUHNCWWNGMTlsWlMzWnBVa1UxUkRVIn0.eyJleHAiOjE3MzYyMjQyOTUsImlhdCI6MTczNjEzNzg5NSwianRpIjoiZGU1MDBkYWMtODgxZS00MjBkLThlNGMtZmI1Y2ZmNDdiM2QxIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5pc29tZXRyaWsuaW8vcmVhbG1zL21hc3RlciIsImF1ZCI6WyI2NzViZDI3MjA3ZjA3ZmY5MjY5MDIzYTdfYXBpLWNsaWVudCIsImFjY291bnQiXSwic3ViIjoiNDYzNjE3YjctZjJkYi00NDU5LTk2MDUtZDgzMTE0ZGY2YmY1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiNjc1YmQyNzIwN2YwN2ZmOTI2OTAyM2E3X2FwaS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZjg0NWY2ZDMtMmU5Yi00YjRmLWIyZTEtNWNlMDZhZDJjNmMzIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL2tleWNsb2FrLmlzb21ldHJpay5pbyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiNjc1YmQyNzIwN2YwN2ZmOTI2OTAyM2E3X2FwaS1jbGllbnQiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlLXJlYWxtLW1hc3Rlci1BY2Nlc3MiLCJ1bWFfcHJvdGVjdGlvbiIsIkFkbWluIiwiRGVmYXVsdC1hcHBsaWNhdGlvbi1yb2xlIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwic2lkIjoiZjg0NWY2ZDMtMmU5Yi00YjRmLWIyZTEtNWNlMDZhZDJjNmMzIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJOZWV0aGEgLCIsInByZWZlcnJlZF91c2VybmFtZSI6Im5lZXRoYUBhcHBzY3JpcC5jbyIsImdpdmVuX25hbWUiOiJOZWV0aGEiLCJmYW1pbHlfbmFtZSI6IiwiLCJlbWFpbCI6Im5lZXRoYUBhcHBzY3JpcC5jbyJ9.sMywtqfd_7PmQPZu7Zal3QCd0yjIdVwnILheZo3Df-yNDgl0aUhjEl-p0CVswEqd21VGw1MQfrLOxsgvj6N4QMp2FbE9WU5EAeJGC7saItqQIY1eHB8WY-mxTkJuYN0fdDCTEGfqXVAg-e18yF7nV542SdoZeVd3lwuoNJl6uN5-3rnejRjA-Gq5AKyJi8tR07p-pAn7qwz22HTQCuImoZWWAlxa-6dHZHvIjLSuh6upeT73S2vHxvdIBJz-BMoi0k872lBVQAuiBzu6h1EKBumu9MPtkC5gVfRf_p8Vn1kmUphDJJj5A8izheTvdt_r3XtJCMe-OdpD7DTqpVAyFw',
+                'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfQUpybXA5cktvcDliZEl4NUNzaEJOUHNCWWNGMTlsWlMzWnBVa1UxUkRVIn0.eyJleHAiOjE3MzU5ODIzMzAsImlhdCI6MTczNTg5NTkzMCwianRpIjoiYWJhNzZkYzYtNzI5Zi00YjllLTgwMmYtZGMxNTEzNWI1NGU1IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5pc29tZXRyaWsuaW8vcmVhbG1zL21hc3RlciIsImF1ZCI6WyI2NzViZDI3MjA3ZjA3ZmY5MjY5MDIzYTdfYXBpLWNsaWVudCIsImFjY291bnQiXSwic3ViIjoiNDYzNjE3YjctZjJkYi00NDU5LTk2MDUtZDgzMTE0ZGY2YmY1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiNjc1YmQyNzIwN2YwN2ZmOTI2OTAyM2E3X2FwaS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMGNhY2NmZjUtY2M5Ny00NTA1LWI3MGYtYjQxZWMxY2UxYWY3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL2tleWNsb2FrLmlzb21ldHJpay5pbyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiNjc1YmQyNzIwN2YwN2ZmOTI2OTAyM2E3X2FwaS1jbGllbnQiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlLXJlYWxtLW1hc3Rlci1BY2Nlc3MiLCJ1bWFfcHJvdGVjdGlvbiIsIkFkbWluIiwiRGVmYXVsdC1hcHBsaWNhdGlvbi1yb2xlIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwic2lkIjoiMGNhY2NmZjUtY2M5Ny00NTA1LWI3MGYtYjQxZWMxY2UxYWY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJOZWV0aGEgLCIsInByZWZlcnJlZF91c2VybmFtZSI6Im5lZXRoYUBhcHBzY3JpcC5jbyIsImdpdmVuX25hbWUiOiJOZWV0aGEiLCJmYW1pbHlfbmFtZSI6IiwiLCJlbWFpbCI6Im5lZXRoYUBhcHBzY3JpcC5jbyJ9.OizsQun_6ajOVF_5ubKhQ047z11h-9PFagtjCS0HIEUEICab6dfDcnmQ-e1yLlbeQl7jK1KFyWqF4Mc5Lp5sl3z7XrUVfbBGF_lB6V0CTFfqFzsR-3Os8Te-3qSx65U_iLc70z1L7RXNMzbSr7cWn2y_Kr_RBC0hQfuH68Ie3yYTmGFjU7rLZLU7mB4_HcacfAVbtyy8yep2kCAhpBDNtvzlUTI7pAdUDZVZXqnF4elI4LnHOnMrNxu3Au4HGtKAKDNTr0eZKIOK33109xqAquhB4ddDSTS3wwVK5o1-Wy0nHaoJZYe63tXQXJhrEC6Ha9czyj5fgcGnqkwGOcWliA',
                 'Content-Type': 'application/json' 
               }
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -107,7 +107,7 @@ def main():
                         logger.info(f"Results for description '{description}': {results}")
                         print(f"Results for description '{description}': {results}")  # Print results
                         if isinstance(results, list):
-                            urls = [item['s3_bucket_image_url'] for item in results][:3]  # Limit to first 3 URLs
+                            urls = [item['s3_bucket_image_url'] for item in results]
                             image_urls.append('\n'.join(urls))  # Append the joined URLs with newline to the list
                         else:
                             image_urls.append('')  # Append an empty string if no results
