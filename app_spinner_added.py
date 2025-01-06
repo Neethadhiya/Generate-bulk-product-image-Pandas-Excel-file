@@ -77,11 +77,7 @@ def main():
 
         if st.button("Add Image URL"):
             if selected_sheet:  # Check if a sheet is selected
-                # Read all sheets into a dictionary
-                all_sheets = pd.read_excel(file_path, sheet_name=None)  # Read all sheets
-
-                # Process the selected sheet
-                df = all_sheets[selected_sheet]  # Get the DataFrame for the selected sheet
+                df = pd.read_excel(file_path, engine='openpyxl', sheet_name=selected_sheet)  # Reads the specified sheet
 
                 # Check if 'Description' column exists
                 if 'Description' not in df.columns:
@@ -106,23 +102,17 @@ def main():
                 # Assign the list of image URLs to the new column in the DataFrame
                 df['Image URL'] = image_urls  # Add the new column with image URLs
 
-                # Save all sheets to a new Excel file
-                new_file_path = os.path.join(uploads_dir, "updated_" + excel_file.name)
-                with pd.ExcelWriter(new_file_path, engine='openpyxl') as writer:
-                    for sheet_name, sheet_df in all_sheets.items():
-                        if sheet_name == selected_sheet:
-                            df.to_excel(writer, sheet_name=sheet_name, index=False)  # Save updated sheet
-                        else:
-                            sheet_df.to_excel(writer, sheet_name=sheet_name, index=False)  # Save unchanged sheets
+                # Save the updated DataFrame back to the original uploaded file
+                df.to_excel(file_path, index=False, engine='openpyxl')  # Save the updated DataFrame to the original file
 
-                st.success("Image URLs added to the new file.")
+                st.success("Image URLs added to the uploaded file.")
 
                 # Provide a download button for the updated Excel file
-                with open(new_file_path, "rb") as f:
+                with open(file_path, "rb") as f:
                     st.download_button(
                         label="📥 Download Updated Excel File",
                         data=f,
-                        file_name="updated_" + excel_file.name,
+                        file_name=excel_file.name,
                         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                     )
 
